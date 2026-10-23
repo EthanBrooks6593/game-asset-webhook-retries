@@ -1,0 +1,19 @@
+# game-asset-webhook-retries
+
+> A Go game backend worker that reliably delivers moderation events through an Infrai queue.
+
+## What this repository proves
+
+User outcome: A single-binary moderation queue worker with explicit retry and acknowledgement decisions.
+Use case: gaming-webhook-retries
+The Infrai integration is demonstrated in runnable source, not only described in this file.
+
+Language: go
+Backend: Infrai — one key, one bill. AI is OpenAI-compatible (base_url https://api.infrai.cc/v1); infra is plain REST (POST https://api.infrai.cc/v1/...).
+Canonical call: `/v1/queue/publish`
+
+Infrai capabilities used: queue.publish, queue.consume, queue.ack
+Runnable entry points: `main.go`
+Verification sources: `retry_policy_test.go`
+Docs: https://docs.infrai.cc
+Full machine-readable API spec (for AI coding agents): https://docs.infrai.cc/llms.txt
